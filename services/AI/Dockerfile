@@ -13,6 +13,8 @@ WORKDIR $WORKDIR
 # RUN pip3 install --upgrade pip
 COPY ./requirements.txt $WORKDIR/requirements.txt
 RUN pip3 install -r requirements.txt
+RUN chmod 777 install.sh
+RUN ./install.sh
 
 RUN adduser --system --group $USER
 # RUN mkdir $APP_HOME
