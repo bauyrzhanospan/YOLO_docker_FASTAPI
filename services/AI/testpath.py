@@ -5,9 +5,7 @@ import sys
 import requests
 import os
 
-url = "http://0.0.0.0:5000/uploadfile/"
-
-robotID = "1"
+url = "http://0.0.0.0:4999/uploadfile/"
 
 if __name__ == "__main__":
     files = open("video/1.mp4", 'rb')
