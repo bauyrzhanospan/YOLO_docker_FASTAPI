@@ -1,5 +1,10 @@
 # DOCKER based FASTAPI server that reads uploaded videos and returns found objects
 
+## Pre-install
+1. Go to ./services/AI/: `cd services/AI/`
+2. Change install.sh to 777 chmod: `sudo chmod 777 install.sh`
+3. Run it: `./install.sh`
+
 ## Install
 
 1. Add to your docker-compose file next element:
