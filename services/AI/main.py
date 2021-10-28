@@ -14,10 +14,18 @@ logging.getLogger("urllib3").setLevel(level=logging.WARNING)
 class AI:
     def __init__(self) -> None:
         self.INPUT_FILE='img/test.jpg'
-        self.OUTPUT_FILE='predicted.jpg'
-        self.LABELS_FILE='data/coco.names'
-        self.CONFIG_FILE='cfg/yolov3.cfg'
-        self.WEIGHTS_FILE='weights/yolov3.weights'
+        # self.OUTPUT_FILE='predicted.jpg'
+        # self.LABELS_FILE='data/coco.names'
+        # self.CONFIG_FILE='cfg/yolov3.cfg'
+        # self.WEIGHTS_FILE='weights/yolov3.weights'
+
+        # Change this -> to this
+        
+        self.OUTPUT_FILE='/home/app/predicted.jpg'
+        self.LABELS_FILE='/home/app/data/coco.names'
+        self.CONFIG_FILE='/home/app/cfg/yolov3.cfg'
+        self.WEIGHTS_FILE='/home/app/weights/yolov3.weights'
+
         self.CONFIDENCE_THRESHOLD=0.3
         self.LABELS = open(self.LABELS_FILE).read().strip().split("\n")
         np.random.seed(4)
