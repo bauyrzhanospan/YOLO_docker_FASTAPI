@@ -1,4 +1,4 @@
-FROM jjanzic/docker-python3-opencv:contrib-opencv-3.4.2
+FROM jjanzic/docker-python3-opencv
 
 ENV WORKDIR=/usr/src/app
 ENV USER=app
