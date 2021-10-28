@@ -5,7 +5,7 @@ services:
     restart: always
     build:
         context: ./services/AI
-    command: gunicorn main:app --bind 0.0.0.0:4999 -w 4 -k uvicorn.workers.UvicornWorker
+    command: ls -al #gunicorn main:app --bind 0.0.0.0:4999 -w 4 -k uvicorn.workers.UvicornWorker
     volumes:
       - ./services/AI/:/home/app/
     ports:
