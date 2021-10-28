@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  ai:
+    restart: always
+    build:
+        context: ./services/AI
+    command: gunicorn main:app --bind 0.0.0.0:4999 -w 4 -k uvicorn.workers.UvicornWorker
+    volumes:
+      - ./services/AI/:/home/app/
+    # depends_on:
+    #   - database
+    # ports:
+    #   - 7777:5000
+  
+  # database:
+  #   restart: always
+  #   # ports: 
+  #   #   - "27017:27017"
+  #   image: mongo
+  #   volumes: 
+  #     - /Volumes/OceanMind/:/data/db/
+    
+  # mongo-express:
+  #   restart: always
+  #   image: mongo-express
+  #   environment:
+  #     - ME_CONFIG_MONGODB_SERVER=database
+  #     - ME_CONFIG_MONGODB_PORT=27017
+  #     - ME_CONFIG_MONGODB_ENABLE_ADMIN=true
+  #     - ME_CONFIG_MONGODB_AUTH_DATABASE=AGF
+  #     - ME_CONFIG_BASICAUTH_USERNAME=JohnDoe
+  #     - ME_CONFIG_BASICAUTH_PASSWORD=12345678
+  #   ports:
+  #     - "8081:8081"
+  #   links:
+  #     - database
+  #   logging:
+  #     driver: "json-file"
+  #     options:
+  #       max-size: "1m"
+  #       max-file: "10"
+  #   depends_on:
+  #     - database
